@@ -1,0 +1,349 @@
+
+
+docker swarm join-token manager
+
+docker swarm join-token manager
+
+
+docker swarm join --token SWMTKN-1-5x403v01186wsr6n9nmqbtp5znkl140k0ir1qm0a7cw077bs71-6p600uzh69tgvm9dk64mdeavd 192.168.0.8:2377
+
+docker swarm join --token <TOKEN> <MANAGER-IP>:2377
+
+
+docker swarm join --token SWMTKN-1-5x403v01186wsr6n9nmqbtp5znkl140k0ir1qm0a7cw077bs71-6p600uzh69tgvm9dk64mdeavd 192.168.0.7:2377
+
+
+docker swarm join --token SWMTKN-1-5x40301186wsr6n9nmqbtp5znkl140k0ir1qm0a7cw077bs71-6p600uzh69tgvm9dk64mdeavd 192.168.0.8:2377
+
+
+ujbjyg
+
+docker swarm join-token manager
+
+
+apt update;  /workspaces/docker (main) $ docker network inspect bridge
+[
+    {
+        "Name": "bridge",
+        "Id": "3911e5b567f15a5e3707dd43adb1ad340ac27f538e2a2630c5b7a0158f2c5913",
+        "Created": "2025-01-11T09:45:41.701225771Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.17.0.0/16",
+                    "Gateway": "172.17.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {
+            "03fb2df5b3fdaccd9d78aaffc1bef540ccfa84ca7cd86edee2a31b65c6517cc3": {
+                "Name": "webapp",
+                "EndpointID": "df0a1b15f06b66d07e5e5d42f5030b85f669b417517b9f1989ecf8418709b1a1",
+                "MacAddress": "02:42:ac:11:00:02",
+                "IPv4Address": "172.17.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Options": {
+            "com.docker.network.bridge.default_bridge": "true",
+            "com.docker.network.bridge.enable_icc": "true",
+            "com.docker.network.bridge.enable_ip_masquerade": "true",
+            "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+            "com.docker.network.bridge.name": "docker0",
+            "com.docker.network.driver.mtu": "1500"
+        },
+        "Labels": {}
+    }
+]
+@thiru170398 ➜ /workspaces/docker (main) $ docker container inspect webapp
+[
+    {
+        "Id": "03fb2df5b3fdaccd9d78aaffc1bef540ccfa84ca7cd86edee2a31b65c6517cc3",
+        "Created": "2025-01-11T09:54:04.501765178Z",
+        "Path": "/docker-entrypoint.sh",
+        "Args": [
+            "nginx",
+            "-g",
+            "daemon off;"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 8392,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2025-01-11T09:54:04.696385039Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:f876bfc1cc63d905bb9c8ebc5adc98375bb8e22920959719d1a96e8f594868fa",
+        "ResolvConfPath": "/var/lib/docker/containers/03fb2df5b3fdaccd9d78aaffc1bef540ccfa84ca7cd86edee2a31b65c6517cc3/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/03fb2df5b3fdaccd9d78aaffc1bef540ccfa84ca7cd86edee2a31b65c6517cc3/hostname",
+        "HostsPath": "/var/lib/docker/containers/03fb2df5b3fdaccd9d78aaffc1bef540ccfa84ca7cd86edee2a31b65c6517cc3/hosts",
+        "LogPath": "/var/lib/docker/containers/03fb2df5b3fdaccd9d78aaffc1bef540ccfa84ca7cd86edee2a31b65c6517cc3/03fb2df5b3fdaccd9d78aaffc1bef540ccfa84ca7cd86edee2a31b65c6517cc3-json.log",
+        "Name": "/webapp",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": null,
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "bridge",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8000"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "no",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "ConsoleSize": [
+                25,
+                139
+            ],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "private",
+            "Dns": [],
+            "DnsOptions": [],
+            "DnsSearch": [],
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": [],
+            "BlkioDeviceReadBps": [],
+            "BlkioDeviceWriteBps": [],
+            "BlkioDeviceReadIOps": [],
+            "BlkioDeviceWriteIOps": [],
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": [],
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": null,
+            "PidsLimit": null,
+            "Ulimits": [],
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware",
+                "/sys/devices/virtual/powercap"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/7d125f02af0a8a02a7663701639e897a886bbadcbfa6b5eb96d66924b3877322-init/diff:/var/lib/docker/overlay2/a84629e0e80ef04bf5592d191b9b335602697d49cc679fbb04c93a4083d78540/diff:/var/lib/docker/overlay2/d5a8a70bb05be95b017b4d15969a11f9fb7e3b18f361030b6250a901aa8ce5ad/diff:/var/lib/docker/overlay2/6fe23e2f17a3aa7eed5ec67f05b44ceddc00a7aaeff5c2fef615947bdb9fd925/diff:/var/lib/docker/overlay2/7f25633fb1cae8c8928d5027f49acdde25c6a3bf611af1946b8e49a4a60b1dc3/diff:/var/lib/docker/overlay2/6d4ab6f82096e025e3e74a40639ccefbdf7e8d90462839907cf063cb5d29f5f4/diff:/var/lib/docker/overlay2/e2a0b229e60f2facce192ae5a872f992203408d0f0e51151e984ac843471d654/diff:/var/lib/docker/overlay2/e546df4fcac850ebb335f7eb652c7affa489ef17cc85b6e4d7f159db041a9125/diff",
+                "MergedDir": "/var/lib/docker/overlay2/7d125f02af0a8a02a7663701639e897a886bbadcbfa6b5eb96d66924b3877322/merged",
+                "UpperDir": "/var/lib/docker/overlay2/7d125f02af0a8a02a7663701639e897a886bbadcbfa6b5eb96d66924b3877322/diff",
+                "WorkDir": "/var/lib/docker/overlay2/7d125f02af0a8a02a7663701639e897a886bbadcbfa6b5eb96d66924b3877322/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [],
+        "Config": {
+            "Hostname": "03fb2df5b3fd",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.27.3",
+                "NJS_VERSION=0.8.7",
+                "NJS_RELEASE=1~bookworm",
+                "PKG_RELEASE=1~bookworm",
+                "DYNPKG_RELEASE=1~bookworm"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "Image": "nginx",
+            "Volumes": null,
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "07cfee80f5ebdc1e655c5b31319f89aab98880b2d5449ebcdd60e83e033b0696",
+            "SandboxKey": "/var/run/docker/netns/07cfee80f5eb",
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8000"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "8000"
+                    }
+                ]
+            },
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "df0a1b15f06b66d07e5e5d42f5030b85f669b417517b9f1989ecf8418709b1a1",
+            "Gateway": "172.17.0.1",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "172.17.0.2",
+            "IPPrefixLen": 16,
+            "IPv6Gateway": "",
+            "MacAddress": "02:42:ac:11:00:02",
+            "Networks": {
+                "bridge": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": null,
+                    "MacAddress": "02:42:ac:11:00:02",
+                    "DriverOpts": null,
+                    "NetworkID": "3911e5b567f15a5e3707dd43adb1ad340ac27f538e2a2630c5b7a0158f2c5913",
+                    "EndpointID": "df0a1b15f06b66d07e5e5d42f5030b85f669b417517b9f1989ecf8418709b1a1",
+                    "Gateway": "172.17.0.1",
+                    "IPAddress": "172.17.0.2",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "DNSNames": null
+                }
+            }
+        }
+    }
+]
+@thiru170398 ➜ /workspaces/docker (main) $ ip -a
+Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
+       ip [ -force ] -batch filename
+where  OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
+                   tunnel | tuntap | maddress | mroute | mrule | monitor | xfrm |
+                   netns | l2tp | fou | macsec | tcp_metrics | token | netconf | ila |
+                   vrf | sr | nexthop }
+       OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
+                    -h[uman-readable] | -iec | -j[son] | -p[retty] |
+                    -f[amily] { inet | inet6 | mpls | bridge | link } |
+                    -4 | -6 | -I | -D | -M | -B | -0 |
+                    -l[oops] { maximum-addr-flush-attempts } | -br[ief] |
+                    -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
+                    -rc[vbuf] [size] | -n[etns] name | -N[umeric] | -a[ll] |
+                    -c[olor]}
+@thiru170398 ➜ /workspaces/docker (main) $ 
+
+
+thiru170398 ➜ /workspaces/docker (main) $ ip -br a
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+eth0             UP             10.0.0.47/16 metric 100 fe80::6245:bdff:fe73:96bf/64 
+docker0          UP             172.17.0.1/16 fe80::42:80ff:fe34:dda4/64 
+veth5b8e959@if4  UP             fe80::6470:bdff:fe20:7932/64 
+
+ 1  docker --version
+    2  apt update;
+    3  ll
+    4  apt update
+    5  apt update;
+    6  docker network
+    7  docker network --help
+    8  docker network --hekp
+    9  docker network --help
+   10  docker ds
+   11  docker ps
+   12  docker ps -a
+   13  docker run -d -p 8000:80 --name webapp nginx
+   14  docker ps
+   15  docker network
+   16  docker network ls
+   17  docker network inspect bridge
+   18  docker container inspect webapp
+   19  ip -a
+   20  ip -br a
+   
+   docker exec -it webapp bash
